@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export function Navigation() {
   return (
-    <aside className='h-full w-16 flex flex-col space-y-10 items-center justify-center relative bg-gray-800 text-white'>
+    <aside className='h-full  w-16 flex flex-col space-y-10 items-center justify-center relative bg-gray-800 text-white'>
       <div className='h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:text-gray-800 hover:bg-white  hover:duration-300 hover:ease-linear focus:bg-white'>
         <Link href='/'>
           <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' viewBox='0 0 20 20' fill='currentColor'><path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' clipRule='evenodd' /></svg>

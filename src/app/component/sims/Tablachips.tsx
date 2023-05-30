@@ -8,7 +8,7 @@ export default  function Tablachips({posts}: any) {
             className='border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600'>
             <tr>
               <th scope='col' className='px-6 py-4'>id</th>
-              <th scope='col' className='px-6 py-4'>Numero</th>
+              <th scope='col' className='px-6 py-4'>Numeros</th>
               <th scope='col' className='px-6 py-4'>Numero SIM</th>
               <th scope='col' className='px-6 py-4'>PUK</th>
               <th scope='col' className='px-6 py-4'>SIM</th>

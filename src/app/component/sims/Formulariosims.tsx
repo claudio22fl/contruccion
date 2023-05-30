@@ -48,7 +48,6 @@ const handleSubmit = async(e: { preventDefault: () => void; }) => {
         console.log('Error:', error)
     }
 }
-
 return (
   <div className=' ml-auto w-4/4'>
     <form onSubmit={handleSubmit} className='w-full mt-20'>
