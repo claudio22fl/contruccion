@@ -15,9 +15,9 @@ export default function RootLayout({
         <title>mi app</title>
       </head>
       <body className={inter.className} suppressHydrationWarning>
-        <div className='h-screen w-full  relative flex overflow-hidden'>
+        <div className='h-screen w-full  relative flex '>
           <Navigation />
-          <div className='w-full h-full flex flex-col'>
+          <div className='w-full h-full flex flex-col '>
             {children}
           </div>
 

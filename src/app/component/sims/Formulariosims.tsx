@@ -2,19 +2,18 @@
 
 import React, { useState } from 'react'
 
-const IndexPage = () => {
+const IndexPage = ({update}: any) => {
     const [formData, setFormData] = useState({
-        numero:  '',
-        numerosim:  '',
+        numero:  0,
+        numerosim:  0,
         puk:  '',
-        sim: '',
+        sim: 0,
         cliente:  '',
-        numerotelefono:  '',
+        numerodetelefono:  0,
         fechainicio: '',
         vencimiento: '',
         correo: '',
-        precio: '',
-        mg: ''
+        valor: 0
     })
 
 const handleChange = (e: { target: { name: any; value: any; }; }) => {
@@ -27,22 +26,18 @@ const handleChange = (e: { target: { name: any; value: any; }; }) => {
 const handleSubmit = async(e: { preventDefault: () => void; }) => {
     e.preventDefault()
     try {
-        const response = await fetch('http://chileaccesorios.com/chips.php', {
+        const response = await fetch('http://chileaccesorios.com/api/chips', {
             method: 'POST',
-            mode: 'no-cors',
-            cache: 'no-cache',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         })
-         console.log(response)
         if (response.ok) {
-            // La petición se realizó correctamente
-            console.log('Datos enviados correctamente')
+            alert('Datos enviados correctamente')
+            update()
         } else {
-            // La petición falló
-            console.log('Error al enviar los datos')
+            alert('Error al enviar los datos')
         }
     } catch (error) {
         console.log('Error:', error)
@@ -76,8 +71,8 @@ return (
           <input type='text' id='cliente' name='cliente' value={formData.cliente} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
         </div>
         <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
-          <label htmlFor='numerotelefono' className='block'>Numero de telefono:</label>
-          <input type='number' id='numerotelefono' name='numerotelefono' value={formData.numerotelefono} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
+          <label htmlFor='numerodetelefono' className='block'>Numero de telefono:</label>
+          <input type='number' id='numerodetelefono' name='numerodetelefono' value={formData.numerodetelefono} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
         </div>
         <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
           <label htmlFor='fechainicio' className='block'>Fecha inicio:</label>
@@ -88,19 +83,14 @@ return (
           <input type='date' id='vencimiento' name='vencimiento' value={formData.vencimiento} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
         </div>
       </div>
-
       <div className='flex flex-wrap -mx-3 mb-6 border-cyan-200'>
         <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
           <label htmlFor='correo' className='block'>Correo:</label>
           <input type='mail' id='correo' name='correo' value={formData.correo} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
         </div>
         <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
-          <label htmlFor='precio' className='block'>Precio:</label>
-          <input type='money' id='precio' name='precio' value={formData.precio} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
-        </div>
-        <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
-          <label htmlFor='mg' className='block'>MG:</label>
-          <input type='number' id='mg' name='mg' value={formData.mg} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
+          <label htmlFor='valor' className='block'>Precio:</label>
+          <input type='money' id='valor' name='valor' value={formData.valor} onChange={handleChange} className='border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full' />
         </div>
       </div>
       <div>
