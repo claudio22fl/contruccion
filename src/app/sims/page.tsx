@@ -9,7 +9,7 @@ export default  function page() {
   const [posts, setPostdata] = useState([]);
 
   const fetchsims = async () => {
-    const response = await fetch('http://chileaccesorios.com/api/chips')
+    const response = await fetch('http://chileaccesorios.com/api/chips', { cache: 'no-store' })
     const json = await response.json()
     if(json.length > 0){
       setPostdata(json)
