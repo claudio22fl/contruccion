@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
-        urlImports: ['http://chileaccesorios.com/', 'https://cdn.skypack.dev'],
+        urlImports: ['http://chileaccesorios.com/'],
         appDir: true
     },
     reactStrictMode: true

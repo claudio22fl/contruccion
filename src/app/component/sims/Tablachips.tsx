@@ -7,7 +7,6 @@ import React, { useState } from 'react'
 export default  function Tablachips({posts}: any) {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(10)
-  console.log(Object.keys(posts[0]))
   const totalPages = Math.ceil(posts.length / itemsPerPage)
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage

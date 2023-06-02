@@ -8,13 +8,13 @@ export default  function page() {
 
   const [posts, setPostdata] = useState([]);
 
-  const fetchsims = useCallback(async () => {
+  const fetchsims = async () => {
     const response = await fetch('http://chileaccesorios.com/api/chips')
     const json = await response.json()
     if(json.length > 0){
       setPostdata(json)
     }
- },[])
+ }
 
   useEffect(() => {
     fetchsims()
