@@ -4,11 +4,10 @@ import Tablachips from "../component/sims/Tablachips";
 import "./sims.module.css";
 import Formulariosims from "../component/sims/Formulariosims";
 
-
-
 export default  function page() {
 
   const [posts, setPostdata] = useState([]);
+
   const fetchsims = useCallback(async () => {
     const response = await fetch('http://chileaccesorios.com/api/chips')
     const json = await response.json()
