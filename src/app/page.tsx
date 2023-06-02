@@ -10,7 +10,7 @@ export default function Home() {
         </div>
         <div className='flex'>
           <div className='w-1/3 bg-red-500 h-20 m-2' />
-          <div className='w-1/3 bg-purple-500 h-20 m-2' />
+          <div className='w-1/3 bg-red-500 h-20 m-2' />
           <div className='w-1/3 bg-pink-500 h-20 m-2' />
         </div>
       </div>
