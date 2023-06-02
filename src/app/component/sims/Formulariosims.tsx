@@ -27,7 +27,7 @@ const IndexPage = ({ update }: any) => {
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://chileaccesorios.com/api/chips", {
+      const response = await fetch("https://chileaccesorios.com/api/chips", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -9,7 +9,7 @@ export default  function page() {
   const [posts, setPostdata] = useState([]);
 
   const fetchsims = async () => {
-    const response = await fetch('http://chileaccesorios.com/api/chips', { cache: 'no-store' , mode: 'no-cors', 'headers': {
+    const response = await fetch('https://chileaccesorios.com/api/chips', { cache: 'no-store' , mode: 'no-cors', 'headers': {
       'Access-Control-Allow-Origin': '*',
   }})
     const json = await response.json()
