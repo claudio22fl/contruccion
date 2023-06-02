@@ -2,7 +2,11 @@
 import Swal from "sweetalert2";
 import React, { useState } from "react";
 
-const IndexPage = ({ update }: any) => {
+type IndexPageProps = {
+  refreshTable: () => void
+}
+
+const IndexPage = ({ refreshTable }: IndexPageProps) => {
 
   const [formData, setFormData] = useState({
     numero: 0,
@@ -34,24 +38,19 @@ const IndexPage = ({ update }: any) => {
         },
         body: JSON.stringify(formData),
       });
+      console.log(formData);
       if (response.ok) {
-        Swal.fire(
-          'Ingresado correctamente',
-          '',
-          'success'
-        )
-        update();
+        Swal.fire("Ingresado correctamente", "", "success");
+        formData;
+        refreshTable();
       } else {
-        Swal.fire(
-          'Error al ingresar',
-          '',
-          'error'
-        )
+        Swal.fire("Error al ingresar", "", "error");
       }
     } catch (error) {
       console.log("Error:", error);
     }
-  }
+  };
+  
   return (
     <div className=" ml-auto w-4/4">
       <form onSubmit={handleSubmit} className="w-full mt-20">
@@ -117,6 +116,7 @@ const IndexPage = ({ update }: any) => {
               name="cliente"
               onChange={handleChange}
               className="border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full"
+              required
             />
           </div>
           <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
@@ -129,6 +129,7 @@ const IndexPage = ({ update }: any) => {
               name="numerodetelefono"
               onChange={handleChange}
               className="border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full"
+              required
             />
           </div>
           <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
@@ -153,6 +154,7 @@ const IndexPage = ({ update }: any) => {
               name="vencimiento"
               onChange={handleChange}
               className="border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full"
+              required
             />
           </div>
         </div>
@@ -167,6 +169,7 @@ const IndexPage = ({ update }: any) => {
               name="correo"
               onChange={handleChange}
               className="border text-slate-950 border-gray-300 px-4 py-2 rounded-md w-full"
+              required
             />
           </div>
           <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
